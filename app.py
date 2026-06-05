@@ -7,6 +7,17 @@ st.markdown("""<style>.stApp{background:#0a0c10;color:#e8edf5}
 .stButton>button{background:#0d47a1;color:#fff;border:none;border-radius:8px;padding:10px 24px;font-weight:700;width:100%}
 </style>""", unsafe_allow_html=True)
 API_KEY = st.secrets.get("GOOGLE_API_KEY") or st.secrets.get("GEMINI_API_KEY","")
+
+# ── Public-facing service availability check ──────────────────────────────────
+if not API_KEY:
+    st.warning(
+        "⚠️ **Huduma hii haipo tayari katika toleo hili la majaribio.**\n\n"
+        "Tunaendelea kuboresha. Rudi baadaye au wasiliana na msimamizi.\n\n"
+        "_This service is not yet available in this demo version. "
+        "We are working on it — please check back soon._"
+    )
+    st.stop()
+
 SYS = "Wewe ni mshauri wa mikopo na fedha Kenya. Jibu kwa Kiswahili. Onya kuhusu mikopo ya haraka yenye riba kubwa (Shylock). Pendekeza suluhisho salama. Si ushauri rasmi wa fedha."
 def ask(q):
     if not API_KEY: return "❌ API key not configured."
