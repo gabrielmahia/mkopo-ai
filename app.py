@@ -55,4 +55,4 @@ with tab3:
     if st.button("⚠️ Dalili za Wakopeshaji wa Shylock",key="k3"):
         with st.spinner("..."): r=ask("Dalili za wakopeshaji wa shylock Kenya na jinsi ya kujiepusha. Orodhesha: Apps za dijiti za hatari, alama za kutambua, haki zako kisheria, na mahali pa kuripoti.")
         st.markdown(f'<div class="mk-card">{r.replace(chr(10),"<br>")}</div>',unsafe_allow_html=True)
-st.markdown("---"); st.caption("🤝 Mkopo AI v1.0 | CBK: centralbank.go.ke | CMA: cma.or.ke | Si ushauri rasmi | CC BY-NC-ND 4.0")
+st.markdown("---"); st.caption("🤝 Mkopo AI v1.0 | CBK: centralbank.go.ke | CMA: cma.or.ke | Si ushauri rasmi | MIT")
